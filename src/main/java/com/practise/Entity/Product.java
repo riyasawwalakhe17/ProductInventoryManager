@@ -1,14 +1,20 @@
 package com.practise.Entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "product_details")
+@Table(name = "products")
 public class Product {
 	
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	
 	private String name;
@@ -19,6 +25,10 @@ public class Product {
 	
 	private String manufacturer;
 
+	@OneToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "tax_id")
+	private Tax tax;
+	
 	public int getId() {
 		return id;
 	}
@@ -59,11 +69,22 @@ public class Product {
 		this.manufacturer = manufacturer;
 	}
 
+	
+	public Tax getTax() {
+		return tax;
+	}
+
+	public void setTax(Tax tax) {
+		this.tax = tax;
+	}
+
 	@Override
 	public String toString() {
 		return "Product [id=" + id + ", name=" + name + ", price=" + price + ", quantity=" + quantity
 				+ ", manufacturer=" + manufacturer + "]";
 	}
+
+	
 	
 	
 
