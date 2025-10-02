@@ -15,6 +15,7 @@ public class GetAllData_bidirection {
 		Session session = factory.openSession();
 		Transaction transaction = session.beginTransaction();
 
+		System.out.println("List of Products are: ");
 		List<Tax> taxList = session.createQuery("select t FROM Tax t", Tax.class).getResultList();
 
 		taxList.stream().forEach(k -> System.out.println(k.toString()));
