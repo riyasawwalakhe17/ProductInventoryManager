@@ -28,7 +28,7 @@ public static void main(String[] args) {
 		tax.setTaxCode("TX-MAKEUP-18");
 		tax.setProduct(product);
 		
-		
+		System.out.println("Data Saved successfully");
 		
 		session.persist(tax);
 		transaction.commit();
