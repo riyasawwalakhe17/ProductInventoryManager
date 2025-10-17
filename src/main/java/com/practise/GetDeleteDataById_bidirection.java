@@ -18,6 +18,7 @@ public class GetDeleteDataById_bidirection {
 		Tax tax = session.find(Tax.class, 6);
 		session.remove(tax);
 
+		System.out.println("Data deleted successfully");
 		transaction.commit();
 		session.close();
 	}
