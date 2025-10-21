@@ -28,6 +28,8 @@ public class GetUpdateData {
 		product.getTax().setGstPercentage(12.0);
 		product.getTax().setCessPercentage(0.5);
 		product.getTax().setTaxCode("TX-CARE-12");
+		
+		System.out.println("Data updated successfully");
 
 		transaction.commit();
 		session.close();
