@@ -31,6 +31,7 @@ public class GetUpdateData_bidirection {
 		tax.getProduct().setManufacturer("Parachute");
 		tax.getProduct().setQuantity(7);
 		
+		System.out.println("Data updated successfully");
 		transaction.commit();
 		session.close();
 	}
