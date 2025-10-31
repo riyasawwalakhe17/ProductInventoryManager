@@ -18,7 +18,7 @@ public class GetDeleteDataById {
 		Product product = session.find(Product.class, 1);
 		session.remove(product);
 		
-		
+		System.out.println("Data deleted successfully");
 
 		transaction.commit();
 		session.close();
