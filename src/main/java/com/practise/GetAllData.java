@@ -15,7 +15,7 @@ public class GetAllData {
 		Session session = factory.openSession();
 		Transaction transaction = session.beginTransaction();
 
-		System.out.println("List of Products: ");
+		System.out.println("List of Products are: ");
 		List<Product> productList = session.createQuery("select p FROM Product p", Product.class).getResultList();
 
 		productList.stream().forEach(k -> System.out.println(k.toString()));
