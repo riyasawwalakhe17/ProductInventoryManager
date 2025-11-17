@@ -16,6 +16,7 @@ public static void main(String[] args) {
 		Session session = factory.openSession();
 		Transaction transaction = session.beginTransaction();
 		
+		System.out.println("Products detail are: ");
 		int id = 1;
 		Tax tax = session.find(Tax.class, 2);
 		
