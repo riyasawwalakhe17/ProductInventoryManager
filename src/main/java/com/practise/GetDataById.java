@@ -14,7 +14,7 @@ public static void main(String[] args) {
 		SessionFactory factory = HibernateUtility.getSessionFactory();
 		Session session = factory.openSession();
 		Transaction transaction = session.beginTransaction();
-		
+		System.out.println("Product detail are: ");
 		int id = 1;
 		Product product = session.find(Product.class, 2);
 		
